@@ -1,3 +1,35 @@
-<div>
-    aaaaa
+<!--
+    Atributos Globais
+
+    - Class
+    - Contenteditable - recebe os valores true ou false
+        permite editar ou não os conteúdos da tag. porém quando atualizada/salva perde a modificação.
+    - data-*
+      
+    - hidden
+        vai esconder os conteudos de uma tag.
+    - id
+        só pode ser usado um por página. não que seja proibido, mas é uma boa prática não usar mais de 1.
+        caso deseja repertir use class.
+    - style
+        usada pra poder aplicar estilização no html. porém não indicada usar diretamente no html.
+    - tabindex
+        quando desejamos navegar usando a tecla tab, isso nos permite o que nortear, qual o prox passo que vai ser usando a tecla tab.
+    - title
+        definir um titulo. isso não muda na questão das vizualizações para o usuario.
+-->
+
+<div class="carrinho" contenteditable="true" tabindex="1">
+    <!-- Elementos-->
+    conteudo
+</div>
+
+<div class="carrinho" hidden>
+    <!-- Elementos-->
+    conteudo escondido
+</div>
+
+<div class="carrinho" tabindex="2">
+    <!-- Elementos-->
+    conteudo
 </div>
