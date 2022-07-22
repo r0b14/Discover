@@ -1,0 +1,51 @@
+<!--
+    2 Lojas
+        Quantos produtos foram produzidos, quantos vendidos e agrupados por nome dos produtos.
+
+    - Atributos
+        - rowspan = faz com que a linha ocupe 2 espaços.
+        - colspan = faz com que ocupe 2 colunas.
+-->
+
+<table>
+    <caption>Produzidos x Vendidos por loja</caption>
+
+    <colgroup>
+        <col>
+        <col span="2" style="background-color: red">
+        <col span="2" style="background-color: blue">
+    </colgroup>
+
+    <thead>
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">Americanas</th>
+            <th colspan="2">Estadão</th>
+        </tr>
+
+        <tr>
+            <th>Produzidos</th>
+            <th>Vendidos</th>
+            <th>Produzidos</th>
+            <th>Vendidos</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Vassoura</td>
+            <td>50</td>
+            <td>33</td>
+            <td>44</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>Computador</td>
+            <td>100</td>
+            <td>67</td>
+            <td>200</td>
+            <td>178</td>
+        </tr>
+    </tbody>
+
+</table>
