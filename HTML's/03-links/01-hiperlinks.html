@@ -1,0 +1,70 @@
+<!-- 
+    Hyperlinks - Elementos Âncora: <a>
+
+        + Anatomia
+            - Conteudos: Podemos colocar qualquer coisa dentro da tag <a>
+        + Atributos:
+            - Globais - title, id, class...
+            - href - pra onde aponta
+                - Para onde iremo, quando clicarmos no link?
+                    -url completa: www.example.com
+                    -fragmmento: #fragmmento
+                    -email: mailto:@example.com
+                    -telefone: 
+                    - e outros.
+            - download - fazer o download do link ao invez de ir para o site.
+            - target
+                - _self (padrão) - vai o mesmo alvo. usar a mesma tag e só trocar a página
+                - _blank - vai fazer a abertura em uma nova aba
+            - title
+                - Podermos inserir uma descrição que pode ser vizualizada quando o mouse descansa sobre o link.
+
+-->
+
+<p>
+    <a href="http://google.com"> Conteudo </a>
+</p>
+<p>
+    <a href="http://google.com" target="_blank"> Conteudo </a> 
+</p>
+
+<!-- 
+    Url Completa
+-->
+<h2>URL Completa</h2>
+
+<p> Encontre-me </p>
+
+<ul>
+    <li><a href="http://google.com/" target="_blank" title="Ir para o Google"> Website </a></li>
+    <li><a href="mailto:contact@google.com"> E-mail </a></li>
+    <li><a href="tel:+558190000-0000"> Telefone </a></li>
+</ul>
+
+<!-- 
+    Url Completa
+-->
+<h2> Fragmento </h2>
+
+<p>Saiba mais</p>
+
+<ul>
+    <li><a href="#about" title="Ir para a seção sobre mim"> Sobre mim </a></li>
+    <li><a href="#history"> Historia </a></li>
+    <li><a href="#works"> Trabalhos </a></li>
+</ul>
+
+<h2 id="about"> Sobre mim</h2>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus laboriosam necessitatibus quos quibusdam ut corrupti, maxime impedit, minus alias libero ab obcaecati porro tempora? Dolorem explicabo quis eligendi sit excepturi?
+
+<h3 id="history"> Historia </h3>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo asperiores natus et culpa placeat velit architecto veniam, libero quae rerum ipsam nihil atque quod dignissimos possimus iure deserunt amet aliquam.
+
+<h3 id="works"> Trabalhos </h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quae dolorum non odit? Nemo fuga architecto obcaecati ab alias neque sunt nam. Nisi, vel maiores? Velit error repellat ipsam amet!
+<br>
+<a href="http://google.com" title="A imagem possui um link"> 
+    <p>Uma imagem random</p>
+    <img src="https://source.unsplash.com/random" alt="">
+
+</a>
