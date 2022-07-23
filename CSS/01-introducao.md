@@ -35,3 +35,20 @@ div p + p {
 ```
 
 ## Anatomia do CSS
+
+```css
+
+/* Selector */
+h1 {
+
+    /* Declaration */
+    color: red;
+    font-size: 60px;
+    background: gray;
+}
+```
+
+* Selector -> h1, h2, h3, h4, ids, class's, attributes...
+* Declaration -> properties + properties values. tudo dentrod a chaves
+* Properties -> color, font, font-size, font-weight, background...
+* Property Value -> red, green, blue, alpha, 60px, 1em...
