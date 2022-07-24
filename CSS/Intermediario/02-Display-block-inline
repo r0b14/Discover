@@ -1,0 +1,19 @@
+## Display: block vc display: inline
+
+- Como as caixas se comportam em relação às outras caixas.
+- Comportamento externo das caixas
+
+|          **Block**            |       **inline**          |
+|-------------------------------|---------------------------|
+|Ocupa toda a linha, Colocando o|Elemento ao lado do outro. |
+|proximo elemento abaixo desse  |                           |
+|-------------------------------|---------------------------|
+|Width e height são respeitados |Width e height não funciona|
+|-------------------------------|---------------------------|
+|Padding, margin, border irão   |Somente valores horizontais|
+|funcionar normalmente.         |de margin, padding e border|
+|-------------------------------|---------------------------|
+
+- Exemplos
+block: `<p> <div> <section>`, todos os headings `<h1> <h2>...` -> A maioria dos elementos são block
+inline: `<a> <strong> <span> <em>`

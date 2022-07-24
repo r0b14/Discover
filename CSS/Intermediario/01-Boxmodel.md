@@ -8,10 +8,10 @@
 Uma caixa retangular.
 Essa caixa possui propriedades de uma caixa (2D)
 
-- Tamanho                  width | height
-- Conteúdos                content
-- Bordas                   border
-- Preenchimento interno    padding
-- Espaços fora da caixa    margin
+- Tamanho (Largura x altura)    width | height
+- Conteúdos                     content
+- Bordas                        border
+- Preenchimento interno         padding
+- Espaços fora da caixa         margin
 
 - **Cada elemento na sua página será considerado uma caixa.**
