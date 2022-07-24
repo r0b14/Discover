@@ -40,5 +40,3 @@ O outline é muito semelhante ao border, mas difere em 4 sentidos:
 - Poderá ser diferente de retangular
 - Não permite ajuste individuais 
 - Mais usado pelo user agent para acessibilidade
-
---- ganhando o primeiro commit do dia.
