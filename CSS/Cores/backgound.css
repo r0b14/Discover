@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+}
+main {
+    color: white;
+
+    background-color: rgb(55, 100, 50);
+    background-image: url(https://i.imgur.com/);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-origin: content-box;
+    background-clip: content-box;
+    background-attachment: fixed;
+
+    background: rgb(55, 100, 50) url(https://i.imgur.com/) no-repeat center top / 50px border-box content-box fixed;
+}
