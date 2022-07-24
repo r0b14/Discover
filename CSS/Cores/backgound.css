@@ -15,3 +15,9 @@ main {
 
     background: rgb(55, 100, 50) url(https://i.imgur.com/) no-repeat center top / 50px border-box content-box fixed;
 }
+
+/* Multiplos Backgrounds */
+
+main {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 0, 0, 0.2)), url(https://i.imgur.com/) no-repeat center top / 50px border-box content-box fixed;
+}
