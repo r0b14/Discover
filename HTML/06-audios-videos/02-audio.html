@@ -1,0 +1,34 @@
+<!-- 
+    <audio>
+
+        - src
+        - controls
+        - se não funcionar?
+            - fallback content
+        - source
+            - src
+            - type
+        - autoplay -> vai começar tocando o vídeo.
+        - preload="valeu" -> comece a fazer a leitura do vídeo de maneira automatizada. é como se após acessar o link já vai carregando aos poucos.
+            - preload="metadata" => vai fazer o carregamento do mínimo necessário (preload)
+            - preload="none" => não vai fazer nada até que inicie o vídeo (preload)
+            - muted => vai fazer com que o video começe mudo
+        -- Geralmente o autoplay só funciona com o muted ativado
+            - poster="valeu" => poster="./local/oi" -> vai ficar mostrando um icone antes de iniciar o vídeo (preview)
+-->
+
+<audio controls>
+    <source src="./idontwannabeyouanymore - billie eilish (cover).mp3"
+        type="audio/mp3">"
+</audio>
+<br>
+<hr>
+<audio controls
+    loop
+    muted
+    autoplay    
+    >
+    <source src="./Jack stauber - buttercup(cover)(legendado).mp3"
+        type="audio/mp3">
+    <p>Seu navegador não suporta audio.</p>
+</audio>
