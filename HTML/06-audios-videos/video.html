@@ -1,0 +1,42 @@
+<!--
+    <video>
+        
+        - src
+        - controls
+        - se não funcionar?
+            - fallback content
+        - source
+            - src
+            - type
+        Sempre há diversos bugs que podem acontecer e isso pode ser resolvido através da documentação
+     
+    - sobre serviços de terceiros
+        Podemos usar o serviço do youtube e simplesmente inserir o link
+
+    - Caracteristicas que podemos definir dentro da tag.
+        - width="valeu" -> altura
+        - height="valeu" -> largura
+        - autoplay -> vai começar tocando o vídeo.
+        - preload="valeu" -> comece a fazer a leitura do vídeo de maneira automatizada. é como se após acessar o link já vai carregando aos poucos.
+            - preload="metadata" => vai fazer o carregamento do mínimo necessário
+            - preload="none" => não vai fazer nada até que inicie o vídeo
+-->
+
+<!--
+    <video src="/HTML/06-audios-videos/video-teste.mp4" controls>
+        <p>Este browser não suporte o vídeo, baixe</p>
+    </video>
+
+    <hr>
+    <br>
+-->
+    <video controls
+    autoplay
+    width="500"
+    preload="metadata"
+    loop
+    >
+        <source src="/HTML/06-audios-videos/video-teste.mp4"
+            type="video/mp4">
+        <p>Este browser não suporte o vídeo, baixe</p>
+    </video>
