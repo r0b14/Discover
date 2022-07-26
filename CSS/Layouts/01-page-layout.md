@@ -42,4 +42,5 @@
 
 ### Absolute
 
-    A propriedade `absolute` é como se tivesse criado um novo plano sobre os outros elementos. 
+    A propriedade `absolute` é como se tivesse criado um novo plano sobre os outros elementos. O espaço que fica em aberto quando movemos os elementos usando `relative`, não existe quando usamos o `absolute`. - quebra de fluxo -
+    Ele vai ser `absolute` em relação a sua página completa.
