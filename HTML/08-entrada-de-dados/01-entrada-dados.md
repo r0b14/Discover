@@ -103,3 +103,62 @@
         ```html
           autocomplete="new-password"
       ```
+---
+## `<input type="email">`
+
+- Espera que o usuário digite um e-mail
+- Irá validar se o valor digitado é um e-mail
+
+### Atributos
+
+- placeholder
+- readonly / disabled
+- valeu
+
+- required
+    * obrigatório
+
+- multiple
+    * O campo irá receber 1 ou mais e-mails, separados por vírgulas.
+
+- minlength / maxlength
+    * O mínimo e/ou máximo valor que o campo irá conter
+        `minlength="8"`
+
+- size
+    * valor numérico indicando quantos caracteres esse
+
+- pattern
+    * Uso de expressão regular para validar o campo
+    * exemplo: o usuário só poderá colocar e-mail do domínio rockeatseat.com.br
+        ` pattern=".+@rockeatseat\.com\.br"`
+        ```html
+            <input type="email"
+            placeholder="Email"
+            pattern=".+@rockeatseat\.com\.br"
+            title="Somente e-mail da rockeatseat serão aceitos."
+            >
+        ```
+- list
+    * o id de uma tag <datalist> que está no mesmo documento
+    * <datalist> irá conter uma lista de valores pré definidos a fim de sugerir ao usuário, quais valores estão disponíveis
+        * Os valores do <datalist> que não forem compatíveis com o campo, não serão apresentados como sugestão
+        ```html
+            <form action="">
+
+            <datalist id="emailslist">
+                <option>@gmail.com</option>
+                <option>@hotmail.com</option>
+                <option>@rockeatseat.com</option>
+            </datalist>
+
+            <input type="email"
+                list="emailslist"
+                placeholder="Email"
+                pattern=".+@rockeatseat\.com\.br"
+                title="Somente e-mail da rockeatseat serão aceitos."
+                >
+
+            <button type="submit">Enviar</button>
+        </form>
+        ```
