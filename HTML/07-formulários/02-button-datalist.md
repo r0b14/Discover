@@ -25,3 +25,28 @@ Atributos comuns
 - **form** -> vai linkar a algum formulário qualquer
 ---
 ## `<datalist>`
+
+- Lista de valores como sugestão a uma tag `<input>`
+- Valores sugestivos e não obrigatório
+- Usuários poderão selecionar um dos valores, ou colocar um valor diferente da sugestão.
+
+```html
+```
+
+`<list>`
+
+- Recebe como valor o id de um <datalist> residente no mesmo documento.
+
+### Tipos de input suportados
+
+- text, search, url, tel, email, data, month, week, time, datetime-local, number, range e color.
+
+    * valores de datalist que não são compatíveis com o tipo do `<input>` não serão apresentados.
+
+### Tipos de input não suportados (conforme especificação)
+
+- hidden, password, checkbox, radio, file, ou qualquer tipo de button.
+
+User Agent
+
+- Verifica a compatibilidade com o browser https://caniuse.com
