@@ -14,6 +14,7 @@ Domintar
 - Controle Customizado
 - Javascript
 
+---
 ## a tag `<form>`
 
 - Elemento que definirá um formulário
@@ -26,7 +27,8 @@ Atributos básicos
     - GET -> fica visível (padrão)
     - POST -> fica invisível 
 
-## `fieldset`
+---
+## `fieldset` legend
 
 Geralmente são melhores interpretados pelos leitores de tela. Isso permite uma melhor acessibilidade
 
@@ -70,6 +72,38 @@ Atributos Especiais
     - permite descrever melhor. inserir uma legenda.
     - nome do grupo
 
-<legend>
+    `<legend>`
+
     - nome do agrupamento
     - primeiro elemento dentro do fieldset
+
+---
+## `<label>`
+
+`<label>`
+
+- Associar e indentificar uma (ou mais) tag de entrada de dados
+- Acessibilidade
+- Você poderá clicar para mudar o foco da entrada de dados
+
+Atributos
+
+- For
+    - vai permitir fazer a conexão entre o formulário e a tag label.
+    - para fazer a conexão entre este label e a tag de entrada de dados
+    - é feita via id do input
+    - só funciona com elementos específicos
+        - button, input (no hidden), meter, output, progress, select, textarea.
+    
+    Sem o uso do for 
+    ``` HTML
+        <label>
+            nome completo:
+            <input type="text">
+        </label>
+    ```
+    com o uso do for 
+    ``` HTML
+        <label for="nome"> nome completo: </label>
+        <input id="nome" type="text">
+    ```
