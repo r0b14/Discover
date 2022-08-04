@@ -47,6 +47,22 @@ h2 {
     font-weight: 400;
 }
 
+/* Links & Buttons ================================================== */
+
+a {
+    color: var(--verde);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark-blue);
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .9rem;
+}
+
 /* Header =========================================================== */
 header {
     background-color: #2D4A22;
@@ -109,14 +125,23 @@ header #logo {
 
 /* Table =========================================================== */
 #data-table{
+    display: block;
     width: 100%;
     border-spacing: 0 0.5em;
+
+    overflow-x: auto;
 }
 
 /* Arredondando os elementos da esquerda*/
-table thead th:first-child,
-table tbody td:first-child {
+table thead tr th:first-child,
+table tbody tr td:first-child {
     border-radius: 0.5em 0 0 0.5em;
+}
+
+/* Arredondando os elementos da esquerda*/
+table thead tr th:last-child,
+table tbody tr td:last-child {
+    border-radius: 0 0.5em 0.5em 0;
 }
 
 table th {
@@ -164,4 +189,19 @@ footer {
     font-weight: 100;
     text-align: center;
     color: var(--dark-blue);
+}
+
+/* Responsive ======================================================= */
+/* A partir de 750 aplica tudo o que está em baixo, após isso aplica o que está em baixo */
+@media (min-width: 750px) {
+    html {
+        font-size: 87.5%; /* Quantos px de font*/
+    }
+
+    /* Tornando o balance em colunas uma ao lado da outra*/
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 }
