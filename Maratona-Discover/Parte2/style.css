@@ -21,6 +21,18 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .container {
     width: min(90vw, 1000px); /* se 1000 não for o menor, vai manter 90vw ou 90% do body */
     margin: auto; /* Objeto centralizado, porém mexe em toda a div e só ajusta no eixo x */
@@ -77,6 +89,11 @@ header #logo {
 .card h3 {
     font-size: 1em;
     font-weight: 400;
+
+    display: flex;
+    /* No Eixo X */
+    align-items: center;
+    justify-content: space-between; /* Espaço entre os elementos */
 }
 
 .card p {
