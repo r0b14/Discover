@@ -1,0 +1,150 @@
+/*Referenciar a raiz do html*/
+:root { 
+    --dark-blue: #363f5f; 
+    --branco: #fff;
+    --cinza: #e3e3e3;
+    --verde: #49AA26;
+    --vermelho: #e92929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    /* Não alterar a borda da caixa pai -> contagem da caixa apartir da borda */
+    box-sizing: border-box;
+}
+
+body {
+    background: #e3e3e3;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: min(90vw, 1000px); /* se 1000 não for o menor, vai manter 90vw ou 90% do body */
+    margin: auto; /* Objeto centralizado, porém mexe em toda a div e só ajusta no eixo x */
+}
+
+/* Titles =========================================================== */
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-blue);
+
+    font-weight: 400;
+}
+
+/* Header =========================================================== */
+header {
+    background-color: #2D4A22;
+    text-align: center;
+
+    padding: 2rem 0 10rem;
+}
+
+header #logo {
+    width: 600px;
+    color: var(--branco);
+    font-weight: 100;
+    font-size: 3em;
+}
+
+/* Balance ==============================================================*/
+
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2 {
+    color: var(--branco);
+    margin-top: 0;
+}
+
+#balance div {
+    margin-bottom: 1.5em;
+    
+}
+
+/* cards ==============================================================*/
+
+.card {
+    background-color: var(--branco);
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem; /* arredondamento das bordas*/
+}
+
+.card h3 {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.card p {
+    margin-top: 1rem;
+    font-size: 2em;
+    line-height: 3rem;
+}
+
+.card.card3 {
+    background: var(--verde);
+    color: var(--branco);
+}
+
+/* Table =========================================================== */
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5em;
+}
+
+/* Arredondando os elementos da esquerda*/
+table thead th:first-child,
+table tbody td:first-child {
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+table th {
+    background-color: var(--branco);
+
+    font-weight: normal;
+    color: #969cb3;
+    text-align: left;
+
+    padding: 1rem 2rem;
+}
+
+
+table tr {
+    opacity: 0.7;
+}
+
+table tr:hover {
+    opacity: 1;
+}
+
+table tbody td {
+    background: var(--branco);
+
+    padding: 1rem 2rem;
+    font-weight: normal;
+}
+
+td.description {
+    color: var(--dark-blue);
+}
+
+td.income {
+    color: var(--verde);
+}
+
+td.expense {
+    color: var(--vermelho);
+}
+/* footer =========================================================== */
+
+footer {
+    background-color: var(--cinza);
+    padding: 2em;
+    font-weight: 100;
+    text-align: center;
+    color: var(--dark-blue);
+}
