@@ -72,10 +72,13 @@ header {
 }
 
 header #logo {
-    width: 600px;
+    width: 50%;
     color: var(--branco);
     font-weight: 100;
     font-size: 3em;
+
+
+    overflow-x: auto;
 }
 
 /* Balance ==============================================================*/
@@ -124,12 +127,16 @@ header #logo {
 }
 
 /* Table =========================================================== */
-#data-table{
+
+#transaction {
     display: block;
     width: 100%;
-    border-spacing: 0 0.5em;
-
     overflow-x: auto;
+}
+
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5em;
 }
 
 /* Arredondando os elementos da esquerda*/
@@ -196,6 +203,10 @@ footer {
 @media (min-width: 750px) {
     html {
         font-size: 87.5%; /* Quantos px de font*/
+    }
+
+    #logo {
+        width: 100%;
     }
 
     /* Tornando o balance em colunas uma ao lado da outra*/
