@@ -188,6 +188,47 @@ td.income {
 td.expense {
     color: var(--vermelho);
 }
+
+/* Modal ============================================================ */
+
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0, 0.7);
+
+    position: fixed;
+    top: 0;
+
+    /* Movendo a parte da caixa branca que está dentro da caixa preta transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Fazer com que o objeto suma */
+    opacity: 0; /* Opacidade 0 -> porém consome espaço */
+    visibility: hidden; /* faz com que suma e não ocupe espaço */
+}
+
+/* Fazendo com que aparece os elementos. Porém vamos pontecializar usando JS */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background-color: var(--branco);
+    padding: 2.4rem;
+
+    position: relative;
+}
+
+/* Forms ============================================================ */
+
+#forms {
+    max-width: ;
+}
+
 /* footer =========================================================== */
 
 footer {
