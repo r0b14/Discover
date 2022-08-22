@@ -18,15 +18,17 @@ Domintar
 ## a tag `<form>`
 
 - Elemento que definirá um formulário
-- É um container estilo `<section>` `<footer>`
+- É um container estilo `<section>` `<footer>`, porém focado na pespectiva de um formulário.
 - Não é indicado criar um form dentro de outro form. (Péssima idéia)
 
 Atributos básicos
 
-- action -> pra onde esse formulário vai ser submetido (enviado)
+- action -> pra onde esse formulário vai ser submetido (enviado)   
+    Caso esse atributo esteja vazio, irá ser recarregado na mesma pagina as informações do formulário.
 - method -> definir 2 verbos HTTP, POST ou GET (um jeito de enviar os dados)
-    - GET -> fica visível (padrão) -> enviar o formualário para endereço definido no action 
-    - POST -> fica invisível na URL (Geralmente usa esse)
+    - GET -> fica visível (padrão) -> enviar o formualário para endereço definido no `action`. (usado para páginas de pesquisa)
+        - Forma de envio: `https://minhapagina.com.br/?name=robson&email=robson@rb.com`
+    - POST -> fica invisível na URL (Geralmente usa esse para criação de usuários ou informações confidenciais.)
 
 ---
 ## `fieldset` legend
@@ -40,12 +42,24 @@ Geralmente são melhores interpretados pelos leitores de tela. Isso permite uma 
 
 Atributos Especiais
 
+- legend -> vai definir o nome do meu agrupamento.
+    ``` HTML
+        <form action="" method="">
+            <fieldset disabled> <- Aqui está o atributo
+                <legend class="contatos">Contatos</legend>  <- Aqui está o nome do meu agrupamento.
+
+                <label for="">Nome</label>
+                <input type="text">
+            </fieldset>
+        </form>
+    ```
+
 - Disabled -> fica desabilitado o formulário
     - desabilita todos os elementos internos
     - não serão enviados ao submeter
     ``` HTML
         <form action="" method="">
-            <fieldset disabled>
+            <fieldset disabled> <- Aqui está o atributo
                 <legend class="contatos">Contatos</legend>
 
                 <label for="">Nome</label>
@@ -62,7 +76,7 @@ Atributos Especiais
             <button>Enviar</button>
         </form>
 
-        <fieldset form="contatos">
+        <fieldset form="contatos"> <- Aqui está o atributo
             <legend class="contatos">Contatos</legend>
 
             <label for="">Nome</label>
@@ -73,7 +87,7 @@ Atributos Especiais
     - permite descrever melhor. inserir uma legenda.
     - nome do grupo
 
-    `<legend>`
+`<legend>`
 
     - nome do agrupamento
     - primeiro elemento dentro do fieldset
@@ -85,7 +99,7 @@ Atributos Especiais
 
 - Associar e indentificar uma (ou mais) tag de entrada de dados
 - Acessibilidade
-- Você poderá clicar para mudar o foco da entrada de dados
+- Você poderá clicar no nome da descrição para mudar o foco da entrada de dados.
 
 Atributos
 
