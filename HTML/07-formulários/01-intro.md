@@ -19,13 +19,14 @@ Domintar
 
 - Elemento que definirá um formulário
 - É um container estilo `<section>` `<footer>`
+- Não é indicado criar um form dentro de outro form. (Péssima idéia)
 
 Atributos básicos
 
 - action -> pra onde esse formulário vai ser submetido (enviado)
-- method -> definir 2 verbos HTTP POST ou GET (um jeito de enviar os dados)
-    - GET -> fica visível (padrão)
-    - POST -> fica invisível 
+- method -> definir 2 verbos HTTP, POST ou GET (um jeito de enviar os dados)
+    - GET -> fica visível (padrão) -> enviar o formualário para endereço definido no action 
+    - POST -> fica invisível na URL (Geralmente usa esse)
 
 ---
 ## `fieldset` legend
