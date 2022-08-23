@@ -169,21 +169,19 @@
 - title
     * vai dá uma descrição do que é solicitado no campo. Caso os dados inseridos sejam coibidos de serem processados.
 
-## `<input type="email">`
+## `<input type="url" />`
 
-- Espera que o usuário digite uma url
-- Irá validar se o valor digitado é uma url
+- Espera que o usuário digite uma `url`.
+- Irá validar se o valor digitado é uma url.
+
 ### Atributos
 
-- placeholder
+- placeholder -> dicas para o usuario
 - readonly / disabled
-- valeu
+- valeu -> dicas para o usuario
 
-- required
+- required (validação)
     * obrigatório
-
-- multiple
-    * O campo irá receber 1 ou mais e-mails, separados por vírgulas.
 
 - minlength / maxlength
     * O mínimo e/ou máximo valor que o campo irá conter
@@ -201,12 +199,169 @@
         </form>
     ```
 - size
-    * valor numérico indicando quantos caracteres esse
+    * valor numérico indicando o tamanho do campo.
 
 - pattern
     * Uso de expressão regular para validar o campo
     * exemplo: o usuário só poderá colocar domínio .com.br
         * pattern= ".*\.com\.br\/.*"
-        
+
+- list 
+    * o id de uma tag `<datalist>` que está no mesmo documento
+    * `<datalist>` irá conter uma lista de valores pré definidos a fim de sugerir ao usuário quais valores estão disponíveis.
+        * Os valores do `<datalist>` que não forem compativeis com o campo, não serão apresentados como sugestão
+
 - title
     * vai dá uma descrição do que é solicitado no campo. Caso os dados inseridos sejam coibidos de serem processados.
+
+- spellcheck
+    * Habilitar a verificação ortográfica para este input
+
+
+## `<input type="file" />`
+
+- Usuário poderá escolher 1 ou mais **arquivos** para enviar no formulário.
+
+### Atributos
+
+- value
+    * contém o arquivo a ser enviado
+
+- accept
+    * descreve que tipos de arquivos serão aceitos, tendo em vista que por padrão serão vários tipos de arquivos aceitos.
+    * exemplo: .doc, .docx, .pdf, audio/*, video/*, image/png, .png, image/*(será aceito todo tipo de imagem) => (/*) todo tipo de.
+
+- files
+    * a lista de arquivo ou arquivos
+
+- multiple
+    * permite o envio de múltiplos arquivos
+    * chave boolean
+
+#### Envio dos arquivos
+
+Para envio dos arquivos o formulário deverá utilizar o método POST e o atributo enctype como "multipart/form-data"
+
+```HTML
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file"
+        value=""
+        accept=".doc"
+        multiple
+        />
+    </form>
+```
+
+
+## `<input type="color" />`
+
+- Interface para selecionar cor
+- Color picker
+
+### Atributos
+- value: RGB
+    * se inválido, o preto será exibido
+
+- list
+    * o id de uma tag `<datalist>` que está no mesmo documento
+    * `<datalist>` irá conter uma lista de valores pré definidos a fim 
+        * Os valores do `<datalist>` que não forem compatíveis com o campo
+
+```HTML
+    <datalist id="colorsdata">
+        <option>#00ff00</option>
+    </datalist>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="color"
+        value="rgb"
+        list="colorsdata"
+        />
+    </form>
+```
+
+
+## `<input type="checkbox" >`
+
+- Caixas que podem ser marcadas
+- Selecionar um valor para ser enviado
+- Se não selecionado, não será enviado nenhum dado
+
+### Atributos
+
+- globais
+
+- value
+    * valor que aquele campo contém
+    * se não estiver presente, o padrão é 'on'
+    * é a descrição que vai assumir assim que marcar e essa descrição será enviada para o backend.
+    
+- checked
+    * para deixar o campo marcado por padrão
+
+```HTML
+    <label for="subscribe"> Receber notificações </label>
+    <input type="checkbox" name="subscribe" id="subscribe">
+```
+
+#### Multipas marcações
+
+- Usaremos o atributo 'name' com o mesmo nome para os diversos campos
+
+```HTML
+    <fieldset>
+        <legend> Choose your interests </legend>
+        <div>
+            <input type="checkbox" name="coding" id="interest" value="coding" checked>
+            <label for="coding"> Coding </label>
+        </div>
+        <div>
+            <input type="checkbox" name="music" id="interest" value="music" checked>
+            <label for="music"> Music </label>
+        </div>
+    </fieldset>
+```
+
+## `<input type="hidden" id="timestamp" name="timestamp" valeu="1286705410">`
+
+- invisivel ao usuario
+- será enviado com o formulário
+- não receberá foco
+- leitores de tela não percebem esse campo
+
+### Atributos
+
+- value
+    * nesse caso, geralmente usado para poder capturar o horário em que o formulário foi enviado.
+
+- name
+    * a forma que vai ser identificado no backend
+
+
+## `<input type="radio">`
+
+- Projetado para selecionar uma única opção de um grupo de opções
+
+### Atributos
+
+- checked
+    * indica que o campo foi marcado
+
+- valeu
+    valor que aquele campo contém
+
+
+## `<input type="textarea">`
+
+- mais de uma linha
+- útil para textos grandes
+
+### Atributos
+
+- id -> identificar qual o meu text area (o for é ligado com o id, caso tenha um label)
+- name -> quando enviarmos o nosso formulário o name vai ser enviado para o backend.
+- rows e cols -> colunas e linhas. Definir o tamanho inicial 
+- maxlength e minlength -> máximo e mínimo que recebe.
+- wrap -> quebrar linha automático - padrão = soft (quebra automática)
+... outros comuns aos `<inputs>'s`
+    - autocomplete, autofocus, disabled, placeholder, readonly, form, required.

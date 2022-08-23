@@ -18,10 +18,118 @@
 
 <form action="">
     <input type="url"
-    placeholder="http://example.com"
-    value="http://example.com"
-    pattern= ".*\.com\.br\/.*"
+    placeholder="http://example.com.br"
+    value="http://example.com.br"
+    pattern= ".*\.com\.br/.*"
     title="Somente dominios .com.br"
     >
     <button type="submit">Enviar</button>
 </form>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file"
+    value=""
+    accept=".doc"
+    multiple
+    />
+</form>
+
+<!-- color -->
+
+<datalist id="colorsdata">
+    <option>#00ff00</option>
+</datalist>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="color"
+    value="rgb"
+    list="colorsdata"
+    />
+</form>
+
+<!-- checkbox -->
+
+<label for="subscribe"> Receber notificações </label>
+<input type="checkbox" name="subscribe" id="subscribe">
+
+
+<!-- checkbox com várias marcações -->
+
+<fieldset>
+    <legend> Choose your interests </legend>
+    <div>
+        <input type="checkbox" name="coding" id="interest" value="coding" checked>
+        <label for="coding"> Coding </label>
+    </div>
+    <div>
+        <input type="checkbox" name="music" id="interest" value="coding" checked>
+        <label for="music"> Music </label>
+    </div>
+</fieldset>
+
+<!-- hidden -->
+
+
+<!-- radio -->
+
+<fieldset>
+    <legend>Bora tomar um café?</legend>
+    
+    <label for="yep"> Sim </label>
+    <input type="radio" name="yep" id="coffee" valeu="yes">
+    
+    <label for="nono"> Não </label>
+    <input checked type="radio" name="nono" id="coffee" valeu="nono">
+</fieldset>
+
+<!-- textarea -->
+
+<textarea>
+    
+</textarea>
+
+<!-- select -->
+
+<!-- o valeu ficar guardado no name quando o formulário é enviado -->
+<label for="carselect">Qual modelo do carro
+    <select name="carmodel" id="carselect" >
+        <option value="">Selecione o Modelo</option>
+        <option value="Fiat">Uno</option>
+        <option value="Volkswagen">Nirvus</option>
+    </select>
+</label>
+
+<!-- optgroup -->
+
+<label> Please choose one or more pets:
+    <select name="pets" multiple size="8">
+        <optgroup label="Pets loves">
+            <option value="dog">Dog</option>
+            <option value="cat">Cat</option>
+            <option value="hamster" disabled >Hamster</option>
+        </optgroup>
+        <optgroup label="Pets flying">
+            <option value="parrot">Parrot</option>
+            <option value="macaw">Macaw</option>
+            <option value="albatross">Albatross</option>
+        </optgroup>
+    </select>
+</label>
+
+
+<!-- search -->
+
+<form action="">
+    <input type="number" min="2" max="99">   
+
+    <button>Enviar</button>
+</form>
+
+<!-- range -->
+
+<input type="range" min="-10" max="200" step="10">   
+
+<!-- Outros Campos -->
+
+<input type="date">
+<input type="datetime-local">
