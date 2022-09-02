@@ -1,0 +1,23 @@
+<script>
+  // 01 - variaveis
+  var clima = "Quente";
+
+  console.log(`${clima}`);
+
+  // 02 - tipos dinamicos
+  let variavelTestagem = 0;
+  console.log(typeof variavelTestagem);
+
+  variavelTestagem = "";
+  console.log(typeof variavelTestagem);
+
+  // Testando o escopo do tipo de declaração var
+  var y = null;
+  console.log("> existe x antes do bloco? ", x);
+  console.log("> existe x antes do bloco? ", y);
+  {
+    var x = 0;
+  }
+  console.log("> existe x depois do bloco? ", y);
+  console.log("> existe x depois do bloco? ", x);
+</script>

@@ -57,10 +57,31 @@ O infinity não tem um número definido, é por sí só uma palavra e pode ser u
 
 ## Undefined
 
-No JavaScript temos o tipo de dados Undefined, que representa valores indefinidos, e o tipo de dados null, que são muitas vezes confundidos. A diferença dos dois é que undefined é considerado como um objeto vazio, ou seja, algo indefinido não existe, já algo null existe mas não tem valor algum.
+De acordo com a documentação do ECMAScript, o valor `undefined` é utilizado quando uma variável não possui um valor. Já o `null` é utilizado quando se quer intencionalmente dizer que há uma ausência de qualquer valor de objeto para aquela variável.
+
+Um exemplo prático é a chamada dos métodos ou variáveis como `getElementById`, `childNodes[n]`, `parentNode`, etc., e eles retornarem `null` em algum momento. Isso significa que a propriedade chamada existe, mas não possui um valor, ou seja, não há um objeto a ela associado. Se algum método retornar `undefined`, indica que determinada propriedade não existe.
 
 * indefinido
 `undefined` é considerado como um objeto vazio, ou seja, algo indefinido não existe.
+
+```JS
+    var x;
+
+    x == null            // true
+    x == undefined       // true
+    x === null           // false
+    x === undefined      // true (x não tem valor!)
+
+    var y = null;
+
+    y == null            // true
+    y == undefined       // true
+    y === null           // true
+    y === undefined      // false (y existe, e seu valor é null)
+
+    typeof x             // 'undefined'
+    typeof y             // 'object'
+```
 
 ## Null
 
