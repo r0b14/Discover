@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finances</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Poppins:ital,wght@0,200;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/de-dinheiro.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho =>> header -->
+    <header>
+      <img id="logo" src="./img/Finances.png" alt="Logo Finances" />
+    </header>
+
+    <!-- Conteúdo ==> main -->
+    <main class="container">
+      <section id="balance">
+        <h2 class="sr-only">Balanço</h2>
+
+        <div class="card">
+          <h3>
+            <span>Entradas</span>
+            <img src="./assets/income.svg" alt="Imagem de entradas" />
+          </h3>
+          <p>R$ 5.000,00</p>
+        </div>
+
+        <div class="card">
+          <h3>
+            <span>Saidas</span>
+            <img src="./assets/expense.svg" alt="Imagem de entradas" />
+          </h3>
+          <p>R$ 3.500,00</p>
+        </div>
+
+        <div class="card card3">
+          <h3>
+            <span>Restante</span>
+            <img src="./assets/total.svg" alt="Imagem de entradas" />
+          </h3>
+          <p>R$ 1.500,00</p>
+        </div>
+      </section>
+
+      <section id="transactions">
+        <h2 class="sr-only">Transações</h2>
+
+        <a href="#" onclick="Modal.open()" class="button new"
+          >+ Nova Transação</a
+        >
+
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="description">Desenvolvimento web</td>
+              <td class="income">R$ 12.000,00</td>
+              <td class="data">14/12/2020</td>
+              <td><img src="./assets/minus.svg" alt="Botão Menos" /></td>
+            </tr>
+
+            <tr>
+              <td class="description">Hamburguer</td>
+              <td class="expense">- R$ 60,00</td>
+              <td class="data">12/11/2020</td>
+              <td><img src="./assets/minus.svg" alt="Botão Menos" /></td>
+            </tr>
+
+            <tr>
+              <td class="description">Alguel Apartamento</td>
+              <td class="expense">- R$ 500,00</td>
+              <td class="data">10/11/2020</td>
+              <td><img src="./assets/minus.svg" alt="Botão Menos" /></td>
+            </tr>
+
+            <tr>
+              <td class="description">Computador</td>
+              <td class="expense">- R$ 1.200,00</td>
+              <td class="data">22/11/2020</td>
+              <td><img src="./assets/minus.svg" alt="Botão Menos" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Pensando na forma de estruturação de caixa dentro de caixa -->
+    <!-- Estrutura que vai ser para poder inserir uma nova transação -->
+    <div class="modal-overlay active">
+      <div class="modal">
+        <div class="forms">
+          <h2 class="titulo-forms">Nova Transação</h2>
+
+          <form action="">
+            <div class="input-grup">
+              <!-- o label(for) é lincado junto ao id => ajuda as pessoas com acessibilidade -->
+              <label class="sr-only" for="description"> Descrição </label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Descrição"
+              />
+            </div>
+
+            <div class="input-group">
+              <!-- o label(for) é lincado junto ao id => ajuda as pessoas com acessibilidade -->
+              <label class="sr-only" for="amount"> Valor </label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                step="0.01"
+                placeholder="0,00"
+              />
+              <small class="help">
+                Use o sinal - (negativo) para despesas e , (vírgula) para casas
+                decimais.
+              </small>
+            </div>
+            <!-- Entrada dos dados-->
+            <div class="input-grup">
+              <!-- o label(for) é lincado junto ao id => ajuda as pessoas com acessibilidade -->
+              <label class="sr-only" for="date"> Data </label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <!-- div que contém o campo para envio do form-->
+            <div class="input-group actions">
+              <a onclick="Modal.close()" href="#" class="button cancel">
+                Cancelar
+              </a>
+              <button>Salvar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Rodapé ==> footer -->
+    <footer>Todos os direitos reservados $Finances$</footer>
+
+    <script>
+      Modal = {
+        open() {
+          // Abrir modal
+          // Adicionar a classe active ao modal
+          document.querySelector(".modal-overlay").classList.add("active");
+        },
+        close() {
+          // fechar o modal
+          // remover a classe active no modal
+          document.querySelector(".modal-overlay").classList.remove("active");
+        },
+      };
+    </script>
+  </body>
+</html>
