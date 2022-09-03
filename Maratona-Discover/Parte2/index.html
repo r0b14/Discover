@@ -54,7 +54,7 @@
       <section id="transactions">
         <h2 class="sr-only">Transações</h2>
 
-        <a href="#" class="button new">+ Nova Transação</a>
+        <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
 
         <table id="data-table">
           <thead>
@@ -136,18 +136,13 @@
             <!-- Entrada dos dados-->
             <div class="input-grup">
               <!-- o label(for) é lincado junto ao id => ajuda as pessoas com acessibilidade -->
-              <label
-              class="sr-only"
-              for="date" > Data </label>
-              <input
-              type="date" 
-              id="date" 
-              name="date"
-              />
+              <label class="sr-only" for="date"> Data </label>
+              <input type="date" id="date" name="date" />
             </div>
             <!-- div que contém o campo para envio do form-->
             <div class="input-group actions">
-              <a href="#" class="button cancel"> Cancelar </a>
+              <a onclick="Modal.close()"
+              href="#" class="button cancel"> Cancelar </a>
               <button>Salvar</button>
             </div>
           </form>
@@ -156,5 +151,26 @@
     </div>
     <!-- Rodapé ==> footer -->
     <footer>Todos os direitos reservados $Finances$</footer>
+
+    <script>
+        Modal = {
+            open(){
+                // Abrir modal
+                // Adicionar a classe active ao modal
+                document
+                    .querySelector('.modal-overlay')
+                    .classList
+                    .add('active')
+                },
+                close(){
+                    // fechar o modal
+                    // remover a classe active no modal
+                    document
+                        .querySelector('.modal-overlay')
+                        .classList
+                        .remove('active')
+                }
+        }
+    </script>
   </body>
 </html>
