@@ -18,3 +18,8 @@ __JavaScritp__
 
 48:03 -> https://youtu.be/41VftS_pjnI?t=2886
     Momento que ele altera as informações do HTML usando JS.
+01:35:00 -> https://youtu.be/41VftS_pjnI?t=5752
+    Momento que explica a mudança para poder aplicar o localStorage
+01:58:00 -> https://youtu.be/41VftS_pjnI?t=7096
+02:05:03 -> https://youtu.be/41VftS_pjnI?t=7503
+    Momento de captura de dados do HTML pelo javaScript

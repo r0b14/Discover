@@ -31,7 +31,7 @@
             <span>Entradas</span>
             <img src="./assets/income.svg" alt="Imagem de entradas" />
           </h3>
-          <p>R$ 5.000,00</p>
+          <p id="incomeDisplay">R$ 5.000,00</p>
         </div>
 
         <div class="card">
@@ -39,7 +39,7 @@
             <span>Saidas</span>
             <img src="./assets/expense.svg" alt="Imagem de entradas" />
           </h3>
-          <p>R$ 3.500,00</p>
+          <p id="expenseDisplay">R$ 3.500,00</p>
         </div>
 
         <div class="card card3">
@@ -47,7 +47,7 @@
             <span>Restante</span>
             <img src="./assets/total.svg" alt="Imagem de entradas" />
           </h3>
-          <p>R$ 1.500,00</p>
+          <p id="totalDisplay" >R$ 1.500,00</p>
         </div>
       </section>
 
@@ -77,12 +77,12 @@
 
     <!-- Pensando na forma de estruturação de caixa dentro de caixa -->
     <!-- Estrutura que vai ser para poder inserir uma nova transação -->
-    <div class="modal-overlay active">
+    <div class="modal-overlay">
       <div class="modal">
         <div class="forms">
           <h2 class="titulo-forms">Nova Transação</h2>
 
-          <form action="">
+          <form action="" onsubmit="Form.submit(event)">
             <div class="input-grup">
               <!-- o label(for) é lincado junto ao id => ajuda as pessoas com acessibilidade -->
               <label class="sr-only" for="description"> Descrição </label>

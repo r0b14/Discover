@@ -17,47 +17,79 @@ Modal = {
 };
 // há a possibilidade de reduzir essas 2 funções para uma só -> toogler
 
-// O array que vai conter todos os valores
-/**
- * Vai precisar inserir e remover do array conforme o solicitante deseje
- **/
-const transactions = [
-  {
-    id: 1,
-    description: "Desenvolvimento Web",
-    amount: 1200000,
-    date: "14/12/2020",
-  },
-  {
-    id: 2,
-    description: "Hamburguer",
-    amount: -6000,
-    date: "12/11/2020",
-  },
-  {
-    id: 3,
-    description: "Aluguel Apartamento",
-    amount: -50000,
-    date: "10/11/2020",
-  },
-];
-
 /**
  * Eu preciso somar as entradas
- * Depois eu preciso somar as saídas
+ * Depois eu precis o somar as saídas
  * e remover das entradas o valor das saídas
  * assim, eu terei o total
  **/
 // constante transaction
 const Transaction = {
+  // O array que vai conter todos os valores
+  all:
+    /**
+     * Vai precisar inserir e remover do array conforme o solicitante deseje
+     **/
+    [
+      {
+        description: "Desenvolvimento Web",
+        amount: 1200000,
+        date: "14/12/2020",
+      },
+      {
+        description: "Hamburguer",
+        amount: -6000,
+        date: "12/11/2020",
+      },
+      {
+        description: "Aluguel Apartamento",
+        amount: -50000,
+        date: "10/11/2020",
+      },
+    ],
+  add(transaction) {
+    // push vai colocar dentro do array alguma coisa
+    Transaction.all.push(transaction);
+    App.reload();
+  },
+
+  remove(index) {
+    Transaction.all.splice(index, 1);
+
+    App.reload();
+  },
+
+  // somar as entradas
   incomes() {
-    // somar as entradas
+    let income = 0;
+    // pegar todas as transações
+    // para cada transação,
+    Transaction.all.forEach((transaction) => {
+      // se ela for maior que zero
+      if (transaction.amount > 0) {
+        // somar a uma variavel e retornar a variavel
+        income += transaction.amount;
+      }
+    });
+    return income;
   },
+  // somar as saidas
   expenses() {
-    // somar as saidas
+    let expense = 0;
+    // pegar todas as transações
+    // para cada transação,
+    Transaction.all.forEach((transaction) => {
+      // se ela for menor que zero
+      if (transaction.amount < 0) {
+        // somar a uma variavel e retornar a variavel
+        expense += transaction.amount;
+      }
+    });
+    return expense;
   },
+  // entradas - saidas
   total() {
-    // entradas - saidas
+    return Transaction.incomes() + Transaction.expenses();
   },
 };
 
@@ -84,11 +116,12 @@ const DOM = {
     // Validando o dado inserido pelo usuário
     const CSSclasses = transaction.amount > 0 ? "income" : "expense";
 
+    // Responsavel por ajustar o valor
     const amount = Utils.formatCurrency(transaction.amount);
 
     const html = `
       <td class="description">${transaction.description}</td>
-      <td class="${CSSclasses}">${transaction.amount}</td>
+      <td class="${CSSclasses}">${amount}</td>
       <td class="data">${transaction.date}</td>
       <td>
         <img src="./assets/minus.svg" alt="Botão Menos" />
@@ -97,16 +130,63 @@ const DOM = {
 
     return html;
   },
-};
 
-const Utils = {
-  formatCurrency(valeu) {
-    // retirando o sinal que entrar -> forçando o que entrar virar um numero
-    const signal = Number(valeu) < 0 ? "-" : "";
+  // atualizando os valores do caixa
+  updateBalance() {
+    document.getElementById("incomeDisplay").innerHTML = Utils.formatCurrency(
+      Transaction.incomes()
+    );
+    document.getElementById("expenseDisplay").innerHTML = Utils.formatCurrency(
+      Transaction.expenses()
+    );
+    document.getElementById("totalDisplay").innerHTML = Utils.formatCurrency(
+      Transaction.total()
+    );
+  },
+
+  clearTransactions() {
+    DOM.transactionsContainer.innerHTML = "";
   },
 };
 
-// Mostrando os elementos que estão na "base de dados" no html(tela)
-transactions.forEach(function (transaction) {
-  DOM.addTransaction(transaction);
-});
+const Utils = {
+  formatCurrency(value) {
+    // retirando o sinal que entrar -> forçando o que entrar virar um numero
+    const signal = Number(value) < 0 ? "-" : "";
+
+    value = String(value).replace(/\D/g, "");
+
+    value = Number(value) / 100;
+
+    // Formandano o numero como real
+    value = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    return signal + value;
+  },
+};
+
+const Form = {
+  submit(event) {
+    console.log(event)
+  }
+}
+
+const App = {
+  init() {
+    // Mostrando os elementos que estão na "base de dados" no html(tela)
+    Transaction.all.forEach((transaction) => {
+      DOM.addTransaction(transaction);
+    });
+
+    DOM.updateBalance();
+  },
+  reload() {
+    DOM.clearTransactions();
+    App.init();
+  },
+};
+
+App.init();
