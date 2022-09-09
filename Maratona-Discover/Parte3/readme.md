@@ -23,3 +23,5 @@ __JavaScritp__
 01:58:00 -> https://youtu.be/41VftS_pjnI?t=7096
 02:05:03 -> https://youtu.be/41VftS_pjnI?t=7503
     Momento de captura de dados do HTML pelo javaScript
+02:08:00 -> https://youtu.be/41VftS_pjnI?t=7680
+    Validando os dados com javaScript
