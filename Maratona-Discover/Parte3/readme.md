@@ -25,3 +25,9 @@ __JavaScritp__
     Momento de captura de dados do HTML pelo javaScript
 02:08:00 -> https://youtu.be/41VftS_pjnI?t=7680
     Validando os dados com javaScript
+
+#### Atalhos
+
+- fechar e abrir os grupamentos de códigos no primeiro nível -> `ctrl` + `k`, depois `1`
+  - Para fechar em outros níveis é só trocar o 1 pelo nível que desejar.
+    - Ex: 2, 3...

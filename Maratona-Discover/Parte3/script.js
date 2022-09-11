@@ -17,6 +17,18 @@ Modal = {
 };
 // há a possibilidade de reduzir essas 2 funções para uma só -> toogler
 
+const Storage = {
+  get() {
+    return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+  },
+  set(transactions) {
+    localStorage.setItem(
+      "dev.finances:transaction",
+      JSON.stringify(transactions)
+    );
+  },
+};
+
 /**
  * Eu preciso somar as entradas
  * Depois eu precis o somar as saídas
@@ -26,27 +38,29 @@ Modal = {
 // constante transaction
 const Transaction = {
   // O array que vai conter todos os valores
-  all:
-    /**
-     * Vai precisar inserir e remover do array conforme o solicitante deseje
-     **/
-    [
-      {
-        description: "Desenvolvimento Web",
-        amount: 1200000,
-        date: "14/12/2020",
-      },
-      {
-        description: "Hamburguer",
-        amount: -6000,
-        date: "12/11/2020",
-      },
-      {
-        description: "Aluguel Apartamento",
-        amount: -50000,
-        date: "10/11/2020",
-      },
-    ],
+  all: Storage.get(),
+  /**
+   * Vai precisar inserir e remover do array conforme o solicitante deseje
+   **/
+  /**
+     [
+       {
+         description: "Desenvolvimento Web",
+         amount: 1200000,
+         date: "14/12/2020",
+       },
+       {
+         description: "Hamburguer",
+         amount: -6000,
+         date: "12/11/2020",
+       },
+       {
+         description: "Aluguel Apartamento",
+         amount: -50000,
+         date: "10/11/2020",
+       },
+     ],
+     */
   add(transaction) {
     // push vai colocar dentro do array alguma coisa
     Transaction.all.push(transaction);
@@ -255,16 +269,20 @@ const Form = {
 const App = {
   init() {
     // Mostrando os elementos que estão na "base de dados" no html(tela)
-    Transaction.all.forEach((transaction, index)=> {
+    Transaction.all.forEach((transaction, index) => {
       DOM.addTransaction(transaction, index);
     });
 
     DOM.updateBalance();
+
+    Storage.set(Transactions.all);
   },
   reload() {
     DOM.clearTransactions();
     App.init();
   },
 };
+
+Storage.get();
 
 App.init();
