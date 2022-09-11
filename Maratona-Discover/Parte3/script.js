@@ -105,13 +105,14 @@ const DOM = {
   // Responsavel por adicionar a transação
   addTransaction(transaction, index) {
     const tr = document.createElement("tr"); // criando elemento na DOM.
-    tr.innerHTML = DOM.innerHTMLTransaction(transaction); // mostrar qual o html que está dentro dele ou receber o html
+    tr.innerHTML = DOM.innerHTMLTransaction(transaction, index); // mostrar qual o html que está dentro dele ou receber o html
+    tr.dataset.index = index;
 
     DOM.transactionsContainer.appendChild(tr);
   },
   // de onde estamos pegando essas informações?
   // const transactions
-  innerHTMLTransaction(transaction) {
+  innerHTMLTransaction(transaction, index) {
     // Validando o dado inserido pelo usuário
     const CSSclasses = transaction.amount > 0 ? "income" : "expense";
 
@@ -123,7 +124,7 @@ const DOM = {
       <td class="${CSSclasses}">${amount}</td>
       <td class="data">${transaction.date}</td>
       <td>
-        <img src="./assets/minus.svg" alt="Botão Menos" />
+        <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Botão Menos" />
       </td>
   `;
 
@@ -150,7 +151,7 @@ const DOM = {
 
 const Utils = {
   formatAmount(value) {
-    value = Number(value) * 100;
+    value = Number(value.replace(/\,\./g, "")) * 100;
     return value;
   },
 
@@ -254,8 +255,8 @@ const Form = {
 const App = {
   init() {
     // Mostrando os elementos que estão na "base de dados" no html(tela)
-    Transaction.all.forEach((transaction) => {
-      DOM.addTransaction(transaction);
+    Transaction.all.forEach((transaction, index)=> {
+      DOM.addTransaction(transaction, index);
     });
 
     DOM.updateBalance();
