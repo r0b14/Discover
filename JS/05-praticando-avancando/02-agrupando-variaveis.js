@@ -9,7 +9,7 @@ name = "Pedro"
 age = 18
 isHuman = true
 
-// concatenação 
+// concatenação
 console.log('o ' + name + ' tem ' + age + ' anos.')
 
 // interpolação
