@@ -1,12 +1,12 @@
 # Tipos de dados
 
 * Gramática
-    - Elementos da linguagem e suas combinações.
-    - A arte de falar e escrever corretamente.
+  * Elementos da linguagem e suas combinações.
+  * A arte de falar e escrever corretamente.
 
 * Vocabulário
-    - Conjunto de termos e expressões
-    - Agrupamento de palavras
+  * Conjunto de termos e expressões
+  * Agrupamento de palavras
 
 * Precisamos saber como escrever
 * Precisamos saber os significados
@@ -25,12 +25,11 @@
 O tipo de dados *String* consiste em uma cadeia de caracteres, ou seja, textos.
 Para denotar string no JavaScript são usados aspas duplas (" "), aspas simples ( ' ' ) e template literals ou template strings ( ).
 
-  - template literals permitem textos multilinhas e expressões de linguagem com os caracteres `${ }` (Crase)(interpolação), por exemplo: `console.log(A soma de duas unidades é ${1+1})`.
-    - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Template_literals
-    - já as outras não, por exemplo: console.log("Isso é um texto").
-      - Exemplos: `console.log(`Robson tem ${idade} anos`);` | `console.log("Robson tem " + idade + " anos");`
+* template literals permitem textos multilinhas e expressões de linguagem com os caracteres `${ }` (Crase)(interpolação), por exemplo: `console.log(A soma de duas unidades é ${1+1})`.
+  * <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Template_literals>
+  * já as outras não, por exemplo: console.log("Isso é um texto").
+    * Exemplos: `console.log(`Robson tem ${idade} anos`);` | `console.log("Robson tem " + idade + " anos");`
 
-  
 *Dica* -> podemos usar aspas duplas ("") quando dentro do texto (string) usar aspas simples (''). Isso pode ser levado em consideração caso deseje usar o oposto.
 
 ## Number
@@ -42,7 +41,7 @@ No JavaScript temos 4 tipos de números, os inteiros (por exemplo: 13), os reais
 `+33 ou -33` // inteiros
 `12.5` // reais ou float
 `NaN` // Not a Number (ñ numero)
-Infinity // infinito 
+Infinity // infinito
 
 * Infinity
 O infinity não tem um número definido, é por sí só uma palavra e pode ser usado para fazer comparações com variáveis e números.
@@ -94,7 +93,7 @@ Um exemplo prático é a chamada dos métodos ou variáveis como `getElementById
 
 O tipo de dado `Object` é estrutural, contendo atributos, ou propriedades, e métodos, ou funcionalidades. Um objeto é denotado com os caracteres { }, atributos e métodos com nome: valor . Por exemplo { nome: "João", idade: 20 }.
 
-* Object 
+* Object
     Propriedades / Atributos
     Funcionalidades / Métodos
 
