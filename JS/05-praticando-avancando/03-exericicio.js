@@ -77,9 +77,7 @@ const manoel = {
   isSubscribed: false,
 }
 
-students = [
-  student, manoel
-]
+students = [ student, manoel ]
 
 console.log(students);
 

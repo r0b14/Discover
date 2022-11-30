@@ -23,7 +23,7 @@
 * Cadeia de caracteres
 
 O tipo de dados *String* consiste em uma cadeia de caracteres, ou seja, textos.
-Para denotar string no JavaScript são usados aspas duplas (" "), aspas simples ( ' ' ) e template literals ou template strings ( ).
+Para denotar string no JavaScript são usados aspas duplas (" "), aspas simples ( ' ' ) e template literals ou template strings (`${ }`).
 
 * template literals permitem textos multilinhas e expressões de linguagem com os caracteres `${ }` (Crase)(interpolação), por exemplo: `console.log(A soma de duas unidades é ${1+1})`.
   * <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Template_literals>
@@ -36,7 +36,7 @@ Para denotar string no JavaScript são usados aspas duplas (" "), aspas simples 
 
 * Números
   
-No JavaScript temos 4 tipos de números, os inteiros (por exemplo: 13), os reais ou float (por exemplo: 83.1), o Not a Number (NaN) e o infinito (Infinity).
+No JavaScript temos 4 tipos de números, os inteiros (por exemplo: 22), os reais ou float (por exemplo: 83.1), o Not a Number (NaN) e o infinito (Infinity).
 
 `+33 ou -33` // inteiros
 `12.5` // reais ou float
@@ -72,7 +72,7 @@ Um exemplo prático é a chamada dos métodos ou variáveis como `getElementById
     x === undefined      // true (x não tem valor!)
 
     var y = null;
-
+v
     y == null            // true
     y == undefined       // true
     y === null           // true
