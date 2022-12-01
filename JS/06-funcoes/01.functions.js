@@ -51,6 +51,42 @@ function createThink(subject) {
   return subject;
 }
 
+console.log(subject); // mostrando variavel
+console.log(createThink(subject)); // mostrando o resultado da variavel dentro da funcao
+subject = createThink(subject); //
 console.log(subject);
-console.log(createThink(subject));
-console.log(subject);
+
+
+//Function hoisting
+
+// Função sofrendo hoisting
+sayMyName();
+
+function sayMyName() {
+  console.log("Robson");
+}
+
+// Variavel recebendo uma funcao
+sayMyName1();
+
+const sayMyName1 = function() {
+  console.log("Robson");
+}
+//Dará um erro de referência
+
+
+/**
+ *  Arrow Function
+**/ 
+
+// Modo tradicional 
+const myName = function() {
+  console.log("Robson00");
+}
+
+// Modo arrow(seta) function
+const myName1 = () => {
+  console.log("Robson01");
+}
+
+myName1();
