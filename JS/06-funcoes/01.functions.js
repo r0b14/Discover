@@ -90,3 +90,38 @@ const myName1 = () => {
 }
 
 myName1();
+
+/**
+ *  Callback Function
+**/
+
+function function1 (userName) {
+  console.log('Antes de executar a funçao callback');
+
+  userName();
+
+  console.log('Depois de executar a funçao callback');
+}
+
+function2(
+  () => {
+    console.log("Executando dentro do function2");
+  }
+);
+
+/**
+ * Funções construtoras
+**/
+
+// * Expressão new
+// * Criar um novo objeto
+// * this keyword
+
+function Person(name) {
+	this.name = name
+	this.walk() = function() {
+		return this.name + "está andando"
+	}
+}
+const mayk = new Person("Mayk")
+const joao = new Person("João")
