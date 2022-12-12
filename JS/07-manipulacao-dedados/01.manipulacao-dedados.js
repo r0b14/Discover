@@ -74,3 +74,24 @@ console.log(frase1.includes("amor")); // true
 let myArray1 = [1, 2, 3, 4, 5] // essa seria o método convencional
 let myArray2 = new Array('a', 'b', 'c', 'd')// ou criar com espaços vazios = `new Array(10)`
 console.log(myArray2); // mostrando
+
+/**
+ * Contando elementos do array
+ **/
+
+let contArray = [
+  "a",
+  {type: "array"},
+  function() { return "Function Aplications "}
+]
+
+console.log(contArray.length); // mostrando quantos elementos tem dentro do array. conta apartir do 1
+
+/**
+ * Transformando de string para array
+ **/
+
+let stringArray = "Manoel Barbosa"
+
+Array.from(stringArray)
+
