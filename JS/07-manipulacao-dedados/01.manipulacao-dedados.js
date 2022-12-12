@@ -95,3 +95,39 @@ let stringArray = "Manoel Barbosa"
 
 Array.from(stringArray)
 
+/**
+ * Manipulando arrays
+**/
+
+let techs = ["js", "html", "css", "c"];
+
+// Adc um item ao fim
+techs.push("c#");
+
+// Adc um item o inicio
+techs.unshift("java")
+
+console.log(`Array1= ${techs}`)
+// retirando um item do final
+techs.pop()
+
+// retirando um item do inicio
+techs.shift()
+
+console.log(`Array2= ${techs}`)
+
+// pegando somente alguns elementos do array
+console.log()
+
+// Removendo elementos do array
+techs.splice(1,2) // Partindo do objeto que está na posição 1, exclua 2, inclusive o 1.
+console.log(techs)
+
+// Removendo elementos do array
+console.log(techs.slice(1,3)) //contando a partir da posição 1 
+
+// Posição do elemento 
+let index = techs.indexOf('css')
+techs.splice(index, 1);
+
+console.log(techs)
